@@ -41,16 +41,20 @@
 }
 
 .text {
-  width: 5rem;
+  width: 30rem;
 }
 
 .controls {
   display: inline-flex;
 }
 
-.control {
+.control1,
+.control2,
+.control3,
+.control4 {
   width: 0.8rem;
   height: 0.8rem;
+  padding: 0.5rem;
   margin: 0.5rem;
   border: 0.1rem solid #fff;
   border-radius: 50%;
@@ -66,7 +70,13 @@
 }
 
 .text-wrapper .text {
-  color: white;
+  font-weight: bold;
+  color: black;
+}
+
+.control-label {
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .wrapper .text-wrapper div:nth-child(1) {
@@ -89,11 +99,60 @@
   opacity: 0;
 }
 
-#button1:checked ~ .wrapper .controls-wrapper .controls label:nth-child(1),
-#button2:checked ~ .wrapper .controls-wrapper .controls label:nth-child(2),
-#button3:checked ~ .wrapper .controls-wrapper .controls label:nth-child(3),
-#button4:checked ~ .wrapper .controls-wrapper .controls label:nth-child(4) {
+#button1:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control1,
+#button2:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control2,
+#button3:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control3,
+#button4:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control4 {
   border: 0.1rem solid black;
+  background-color: red;
+}
+
+#button1:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control1:active,
+#button2:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control2:active,
+#button3:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control3:active,
+#button4:checked
+  ~ .wrapper
+  .controls-wrapper
+  .controls
+  .control-label
+  .control4:active {
+  background-color: blue;
+  transition: 0.1s;
 }
 
 #button1:checked ~ .slide-tape .slide1 {
